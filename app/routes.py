@@ -1,10 +1,9 @@
+# -*- coding: utf-8 -*- 
+from flask import render_template
 from app import app
 
 @app.route('/')
 @app.route('/index')
 def index():
-    #return "Привет, Мир!"
-    return "Hello, World!"
-
-if __name__ == '__main__':
-    app.run(host='127.0.0.1', debug=True)
+    user = {'username': 'Miguel'}
+    return render_template('index.html', title='Home', user=user)
